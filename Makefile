@@ -15,13 +15,12 @@ libro:
 
 
 $(subdirs):
-	echo $(subdirs)
 	$(MAKE) -C $@
 
 
 
 clean:
-	for dir in $(dirs); do \
+	for dir in $(subdirs); do \
 	$(MAKE) -C $$dir -f Makefile $@; \
 	done	
 	latexmk -c
